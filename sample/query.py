@@ -26,7 +26,8 @@ name = input('Enter your name: ')
 print('Hello ' + name)
 print('1. List items by warehouse')
 print('2. Search an item and place an order')
-print('3. Quit')
+print('3. Browse by category')
+print('4. Quit')
 p = int(input('Pick any statement by its number: '))
 
 
@@ -90,6 +91,21 @@ elif p == 2:
             if ans_max == 'yes':
                 print(f'The order has been placed. Item name {item_name} and amount ordered {w3}')
 elif p == 3:
+    c = []
+
+    for i in stock:
+        cat = i['category']
+        c.append(cat)
+    c1 = []
+    for i in c:
+        if i not in c1:
+            c1.append(i)
+
+    print(c1)
+
+
+elif p == 4:
+
     pass
 else:
     print('The operation entered is not valid')
